@@ -34,12 +34,10 @@ spec:
 				"mode": "bridge",
 				"ipam": {
 					"type": "static",
-					"addresses": [
-						{
-							"address": "{{.IPPrefix}}",
-							"gateway": "{{.Gateway}}"
-						}
-					]
+					"routes": [{
+						"dst": "0.0.0.0/0",
+						"gw": "{{.Gateway}}"
+					}]
 				}
 			}, 
 			{
